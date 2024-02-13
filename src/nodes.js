@@ -6,6 +6,7 @@ const trendingPreviewSection = selectors('#trendingPreview')
 const categoriesPreviewSection = selectors('#categoriesPreview')
 const genericListSection = selectors('#genericList')
 const movieDetailSection = selectors('#movieDetail')
+const likedMoviesSecction = selectors('#liked')
 
 //List Containers
 const searchForm = selectors('#searchForm')
@@ -13,6 +14,7 @@ const trendingMoviesPreviewList = selectors('.trendingPreview-movieList')
 const categoriesPreviewList = selectors('.categoriesPreview-list')
 const movieDetailCategoriesList = selectors('#movieDetail .categories-list')
 const relatedMoviesContainer = selectors('.relatedMovies-scrollContainer')
+const likedMoviesListArticle = selectors('.liked-movieList')
 
 //Elements
 const headerTitle = selectors('.header-title')
