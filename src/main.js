@@ -64,7 +64,7 @@ async function renderMovies(movies, container, { lazyLoad = false, clean = true 
         movieImg.setAttribute( lazyLoad ? 'data-img' : 'src', 'https://image.tmdb.org/t/p/w300' + movie.poster_path)
         movieImg.addEventListener('click', () => location.hash = '#movie=' + movie.id)
         movieImg.addEventListener('error', () => {
-            movieImg.setAttribute('src', 'https://img.posterstore.com/zoom/30x40-2-1965.jpg')
+            movieImg.setAttribute('src', 'https://dearsam.com/img/600/744/resize/4/0/404-50x70_3a189.jpg')
         })
 
         const movieBtn = document.createElement('button')
@@ -114,7 +114,7 @@ async function renderCategories (categories, container) {
 async function getTrendingMoviesPreview () {
     const {data} = await api('trending/movie/day'); 
     const movies = data.results;
-    renderMovies(movies, trendingMoviesPreviewList, {lazyLoad : true, clean: true})
+    renderMovies(movies, trendingMoviesPreviewList, {lazyLoad : false, clean: true})
 }
 
 async function getCategoriesMoviesPreview () {
@@ -226,6 +226,7 @@ async function getMovieById(id) {
         ),
         url(${imgUrl})
     `;
+    // movieImg.src = imgUrl
     movieDetailCategoriesList.innerHTML = ' '
     renderCategories(movie.genres, movieDetailCategoriesList)
     getRelatedMoviesId(id)

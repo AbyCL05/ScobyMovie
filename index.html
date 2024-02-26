@@ -9,18 +9,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700;800&family=Red+Hat+Display:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles/app.css" />
-
   <title>ScobyMovie</title>
 </head>
 <body>
-  <header id="header" class="header-container">
+  <header id="header" class="header-container" >
+    <!-- <img id="imageMovie"></img> -->
     <span class="header-arrow inactive">&lt;</span>
     <h1 class="header-title">ScobyMovie</h1>
     <h1 class="header-title header-title--categoryView inactive">Acción</h1>
 
     <form id="searchForm" class="header-searchForm">
       <input type="text" placeholder="Ingresa tu busqueda" />
-      <button id="searchBtn">🔍</button>
+      <button id="searchBtn"><box-icon name='search-alt' color="black"></box-icon></box-icon></button>
     </form>
   </header>
 
@@ -128,8 +128,9 @@
     </article>
   </section>
 
-  <footer>Hecho con amor en Platzi por @juandc</footer>
+  <footer>Un día sin reir es un día perdido 😁</footer>
   
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="./src/secrets.js"></script>
   <script src="./src/nodes.js"></script>

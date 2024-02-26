@@ -51,7 +51,7 @@ function homePage () {
     categoriesPreviewSection.classList.remove('inactive')
     genericListSection.classList.add('inactive')
     movieDetailSection.classList.add('inactive')
-
+    headerSection.style.background = ""
     getTrendingMoviesPreview()
     getCategoriesMoviesPreview()
     getLikedMovies()

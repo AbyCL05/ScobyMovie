@@ -1,4 +1,4 @@
-const selectors = (id) => document.querySelector(id)
+ const selectors = (id) => document.querySelector(id)
 
 //Sections
 const headerSection = selectors('#header')

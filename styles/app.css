@@ -1,14 +1,11 @@
 /* General */
-* { box-sizing: border-box; }
+* { box-sizing: border-box; padding:0px; margin: 0px;  }
 
 :root {
-  --purple-light-1: #FBFAFB;
-  --purple-light-2: #efe3fa;
-  --purple-medium-1: #AA83C8;
-  --purple-medium-2: #8B48BF;
-  --purple-medium-3: #5C218A;
-  --purple-dark-1: #3E0F64;
-  --purple-dark-2: #2A0646;
+  --main: #FE7A36;
+  --loading-light: rgb(245, 151, 104);
+  --white1: white;
+  --background: black;
 
   --yellow: #EECC75;
   --green: #CAD297;
@@ -26,17 +23,21 @@
 }
 
 html {
-  background-color: var(--purple-medium-3);
+  background-color: var(--main);
 }
 
 body {
-  background-color: var(--purple-light-1);
-  color: var(--purple-dark-2);
+  background-color: var(--background);
+  color: var(--white1);
   font-family: var(--font-family-text);
   font-weight: var(--font-weight-text1);
   font-size: 16px;
   margin: 4px 0 0 0;
   padding: 0;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 h1, h2, h3 {
@@ -46,7 +47,7 @@ h1, h2, h3 {
 
 h1, h2 {
   font-size: 24px;
-  color: var(--purple-dark-2);
+  color: var(--white1);
   font-family: var(--font-family-titles);
   font-weight: var(--font-weight-title1);
   margin: 0;
@@ -55,33 +56,33 @@ h1, h2 {
 
 h2 {
   font-size: 18px;
-  color: var(--purple-dark-1);
+  color: var(--main);
   font-weight: var(--font-weight-title2);
 }
 
 h3 {
-  color: var(--purple-dark-2);
+  color: var(--white1);
   font-weight: var(--font-weight-text2);
   font-size: 16px;
 }
 
 input {
-  background-color: var(--purple-light-2);
-  color: var(--purple-medium-2);
-  border: none;
+  background-color: transparent;
+  border: solid 1px #FE7A36 ;
   font-size: 18px;
   padding-left: 16px;
+  color: white;
 }
 
 input::placeholder {
-  color: var(--purple-medium-1);
+  color: var(--main);
   font-family: var(--font-family-text);
 }
 
 button {
-  background-color: var(--purple-dark-1);
+  background-color: var(--main);
   border: none;
-  color: var(--purple-light-2);
+  color: var(--white1);
   font-weight: var(--font-weight-text2);
   font-size: 14px;
   cursor: pointer;
@@ -100,6 +101,9 @@ button {
 .trendingPreview-header, .categoriesPreview-title, .liked-header {
   margin-bottom: 24px;
 }
+.trendingPreview-movieList::-webkit-scrollbar {
+ appearance: none;
+}
 
 .movie-container {
   cursor: pointer;
@@ -108,7 +112,9 @@ button {
 
 .movie-img {
   border-radius: 8px;
+  margin: 10px 0;
 }
+
 
 .categoriesPreview-list, .categories-list {
   display: flex;
@@ -120,7 +126,8 @@ button {
 
 /* Header */
 .header-container {
-  padding-top: 40px;
+  padding-top: 10px;
+  max-height: fit-content;
 }
 
 .header-container--long {
@@ -149,7 +156,7 @@ button {
   display: inline-block;
 }
 .header-arrow--white {
-  color: var(--purple-light-1);
+  color: var(--white1);
 }
 
 .header-searchForm {
@@ -173,6 +180,8 @@ button {
   border-bottom-right-radius: 8px;
 }
 
+
+
 /* Trending */
 .trendingPreview-header, .liked-header {
   display: flex;
@@ -184,6 +193,9 @@ button {
   border-radius: 8px;
   height: 32px;
   width: 72px;
+}
+.liked-movieList::-webkit-scrollbar  {
+  display: none;
 }
 
 .trendingPreview-movieList, .liked-movieList {
@@ -238,15 +250,15 @@ button {
 #id16 { --idColor: var(--green); }
 #id35 { --idColor: var(--lightBlue); }
 #id80 { --idColor: var(--darkBlue); }
-#id99 { --idColor: var(--purple-dark-1); }
-#id18 { --idColor: var(--purple-medium-1); }
+#id99 { --idColor: var(--main); }
+#id18 { --idColor: var(--main); }
 #id10751 { --idColor: var(--yellow); }
 #id14 { --idColor: var(--red); }
 #id36 { --idColor: var(--green); }
 #id27 { --idColor: var(--lightBlue); }
 #id10402 { --idColor: var(--darkBlue); }
-#id9648 { --idColor: var(--purple-dark-1); }
-#id10749 { --idColor: var(--purple-medium-1); }
+#id9648 { --idColor: var(--main); }
+#id10749 { --idColor: var(--main); }
 #id878 { --idColor: var(--yellow); }
 #id10770 { --idColor: var(--red); }
 #id53 { --idColor: var(--green); }
@@ -260,6 +272,9 @@ button {
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 32px 24px;
+}
+.genericList-container::-webkit-scrollbar {
+  display: none;
 }
 
 .genericList-container .movie-container {
@@ -277,10 +292,10 @@ button {
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   padding: 32px 24px;
-  margin-top: 403px;
+  margin-top: 410px;
   z-index: 1;
   position: absolute;
-  background-color: var(--purple-light-1);
+  background-color: var(--background);
 }
 
 .movieDetail-title {
@@ -341,13 +356,14 @@ button {
 
 /* Footer */
 footer {
-  background-color: var(--purple-medium-3);
-  color: var(--purple-light-2);
+  background-color: var(--main);
+  color: var(--white1);
   text-align: center;
   height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
+  max-height: 100px;
 }
 
 
@@ -358,7 +374,7 @@ footer {
 
 
 .movie-container--loading { 
-  background: var(--purple-light-2);
+  background: var(--loading-light);
   border-radius: 8px;
   height: 225px;
   min-height: 225px;
@@ -380,7 +396,7 @@ footer {
 
 .movie-btn {
   position: absolute;
-  top: 5px;
+  top: 12px;
   right: 10px;
   height: 30px;
   width: 30px;
@@ -394,11 +410,11 @@ footer {
 }
 
 .movie-btn--liked {
-  background-color: var(--purple-light-2);
+  background-color: var(--white1);
 }
 
 .movie-btn--liked::before {
-  content: '💜';
+  content: '🧡';
 }
 
 .categoriesPreview-list, .categories-list {
@@ -410,7 +426,7 @@ footer {
 }
 
 .category-container--loading {
-  background: var(--purple-light-2);
+  background: var(--loading-light);
   border-radius: 8px;
   height: 25px;
   min-height: 25px;
@@ -433,5 +449,56 @@ footer {
   }
   50% {
     opacity: 0%;
+  }
+}
+
+/* Media Queries*/
+
+/* GenericList */
+@media (min-width: 600px) {
+  .genericList-container .movie-container {
+    display: inline-block;
+    width: 31.6%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .genericList-container .movie-container {
+    display: inline-block;
+    width: 23.75%;
+  }
+}
+
+/* Poster*/
+
+/*Detail Page*/
+
+@media (min-width: 320px) {
+  #movieDetail {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  #movieDetail {
+    margin-top: 700 px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  .movieDetail-description {
+    font-size: 24px;
+  }
+  .relatedMovies-container {
+    height: 300px;
+  }
+  .genericList-container {
+    padding: 20px 50px;
   }
 }
